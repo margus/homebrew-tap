@@ -14,7 +14,7 @@ class Bb < Formula
       sha256 "a24348d005ab69ccb8880ef3b8ee1577c6a3716e4a021abaa07d8ab6500b7556"
 
       define_method(:install) do
-        bin.install "bb"
+        bin.install Dir["bb-*"].first => "bb"
       end
     end
     if Hardware::CPU.arm?
@@ -22,7 +22,7 @@ class Bb < Formula
       sha256 "f656949ab513973c78ffcfc2ff0ca92cb1cd7f54c8d7816c5a4fb898086c8308"
 
       define_method(:install) do
-        bin.install "bb"
+        bin.install Dir["bb-*"].first => "bb"
       end
     end
   end
@@ -32,14 +32,14 @@ class Bb < Formula
       url "https://github.com/margus/bitbucket-cli/releases/download/v0.1.0-rc.1/bb-linux-amd64"
       sha256 "5ff240fd008896d1545047744a09efeb0c40bba2b20e0bb4ff9c31492de5efa0"
       define_method(:install) do
-        bin.install "bb"
+        bin.install Dir["bb-*"].first => "bb"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/margus/bitbucket-cli/releases/download/v0.1.0-rc.1/bb-linux-arm64"
       sha256 "6c7f94aa5ade288b48da2343bfdbc44f149710c2a56f363f8184349eaafe6720"
       define_method(:install) do
-        bin.install "bb"
+        bin.install Dir["bb-*"].first => "bb"
       end
     end
   end
